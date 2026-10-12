@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual y Guía Completa de Desarrollo Frontend HTML5</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="brand">
+                <div class="brand-icon">FE</div>
+                <div class="brand-text">
+                    <h1>Frontend Guide</h1>
+                    <span>Manual HTML5 & Modern JS</span>
+                </div>
+            </div>
+
+            <!-- Search -->
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Buscar en el manual...">
+            </div>
+
+            <!-- Reading Progress -->
+            <div class="progress-card">
+                <div class="progress-header">
+                    <span>Progreso del Manual</span>
+                    <span id="progress-val">0%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="progress-fill" class="progress-bar-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <div class="nav-group-title">Introducción</div>
+                <a class="nav-item active" data-target="inicio">
+                    <span>🚀</span>
+                    <span class="nav-text">Inicio y Resumen</span>
+                    <span class="badge">01</span>
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-group-title">Núcleo Web</div>
+                <a class="nav-item" data-target="fundamentos">
+                    <span>📄</span>
+                    <span class="nav-text">HTML, CSS & JS Core</span>
+                    <span class="badge">02</span>
+                </a>
+                <a class="nav-item" data-target="frameworks">
+                    <span>⚛️</span>
+                    <span class="nav-text">Frameworks & SSR</span>
+                    <span class="badge">03</span>
+                </a>
+                <a class="nav-item" data-target="estilos">
+                    <span>🎨</span>
+                    <span class="nav-text">Estilos & Tailwind</span>
+                    <span class="badge">04</span>
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-group-title">Ecosistema & Calidad</div>
+                <a class="nav-item" data-target="herramientas">
+                    <span>🛠️</span>
+                    <span class="nav-text">Build Tools & Tooling</span>
+                    <span class="badge">05</span>
+                </a>
+                <a class="nav-item" data-target="rendimiento">
+                    <span>⚡</span>
+                    <span class="nav-text">Rendimiento & Vitals</span>
+                    <span class="badge">06</span>
+                </a>
+                <a class="nav-item" data-target="testing">
+                    <span>🧪</span>
+                    <span class="nav-text">Testing & E2E</span>
+                    <span class="badge">07</span>
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-group-title">Herramienta Interactiva</div>
+                <a class="nav-item" data-target="asistente">
+                    <span>🧙‍♂️</span>
+                    <span class="nav-text">Asistente de Stack</span>
+                    <span class="badge">WIZARD</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+            <button id="theme-toggle-btn" class="theme-toggle-btn">
+                <span id="theme-icon">🌙</span>
+                <span id="theme-text">Modo Oscuro</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <div class="main-wrapper">
+        <header class="top-header">
+            <button id="mobile-toggle-btn" class="mobile-toggle" aria-label="Abrir menú">☰</button>
+            <div class="header-breadcrumbs">
+                <span>Manual Frontend</span>
+                <span>/</span>
+                <span id="current-crumb" class="active-crumb">Inicio y Resumen</span>
+            </div>
+            <div class="header-actions">
+                <span class="header-tag">HTML5 / CSS3 / ES2024</span>
+            </div>
+        </header>
+
+        <main class="content-body">
+
+            <!-- ================= SECCIÓN: INICIO ================= -->
+            <section id="inicio" class="doc-section active">
+                <div class="section-header">
+                    <span class="section-tag">Bienvenido</span>
+                    <h1 class="section-title">Manual y Guía de Desarrollo Frontend Moderno</h1>
+                    <p class="section-description">
+                        Una referencia completa, interactiva y estructurada para construir aplicaciones web modernas, rápidas, accesibles y escalables.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>🎯 Objetivo de este Manual</h2>
+                    <p>
+                        Esta guía está diseñada tanto para desarrolladores que buscan afianzar los pilares fundamental de la Web (HTML5, CSS3, JS ES6+) como para ingenieros que necesitan seleccionar y aplicar arquitecturas avanzadas con React, Next.js, Tailwind CSS, Vite y herramientas de Testing.
+                    </p>
+
+                    <div class="cards-grid">
+                        <div class="card">
+                            <span class="card-icon">⚡</span>
+                            <h3 class="card-title">Rendimiento Extremo</h3>
+                            <p class="card-desc">Optimización con Core Web Vitals, Lazy Loading y minimización de paquetes bundle.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-icon">♿</span>
+                            <h3 class="card-title">Accesibilidad (a11y)</h3>
+                            <p class="card-desc">Estándares WCAG 2.1, semántica HTML5 pura y roles ARIA para inclusión universal.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-icon">🛠️</span>
+                            <h3 class="card-title">Herramientas Modernas</h3>
+                            <p class="card-desc">Uso de Vite, TypeScript, Tailwind CSS, Vitest y CI/CD automatizado.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-icon">🧙‍♂️</span>
+                            <h3 class="card-title">Asistente Interactivo</h3>
+                            <p class="card-desc">Wizard integrado para ayudarte a elegir la mejor combinación tecnológica para tu proyecto.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout info">
+                    <div class="callout-icon">💡</div>
+                    <div class="callout-content">
+                        <h4>Sugerencia de navegación</h4>
+                        <p>Utiliza el menú lateral para explorar los capítulos o ejecuta la búsqueda en tiempo real. Al final de cada capítulo puedes marcar la sección como completada para medir tu progreso.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: FUNDAMENTOS ================= -->
+            <section id="fundamentos" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Capítulo 01</span>
+                    <h1 class="section-title">HTML5 Semántico, CSS Moderno & JavaScript</h1>
+                    <p class="section-description">
+                        La base inmutable del desarrollo web. Domina la semántica, el layout con CSS Flex/Grid y la asincronía en JS.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>1. HTML5 Semántico y Estructura Accesible</h2>
+                    <p>El uso correcto de etiquetas semánticas no solo mejora el SEO, sino que garantiza la accesibilidad para lectores de pantalla.</p>
+
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span class="code-lang">HTML5</span>
+                            <button class="copy-btn">📋 Copiar</button>
+                        </div>
+                        <pre><code>&lt;!-- Estructura Semántica Recomendada --&gt;
+&lt;header role="banner"&gt;
+    &lt;nav aria-label="Navegación principal"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#home"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main id="main-content" tabIndex="-1"&gt;
+    &lt;article class="post-card"&gt;
+        &lt;header&gt;
+            &lt;h2&gt;Título del Artículo&lt;/h2&gt;
+            &lt;time datetime="2026-07-24"&gt;24 de Julio, 2026&lt;/time&gt;
+        &lt;/header&gt;
+        &lt;p&gt;Contenido relevante accesible...&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/main&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>2. Layout Moderno con CSS Grid & Flexbox</h2>
+                    <p>Combina Flexbox para layouts unidimensionales y CSS Grid para estructuras bidimensionales complejas.</p>
+
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span class="code-lang">CSS3</span>
+                            <button class="copy-btn">📋 Copiar</button>
+                        </div>
+                        <pre><code>/* Grid Autoadaptable sin Media Queries */
+.grid-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Subgrid para alineación exacta de tarjetas */
+.card-grid-item {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>3. JavaScript Asíncrono (Fetch & Async/Await)</h2>
+                    <p>Manejo de peticiones HTTP de forma segura con manejo de errores expresivo.</p>
+
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span class="code-lang">JavaScript</span>
+                            <button class="copy-btn">📋 Copiar</button>
+                        </div>
+                        <pre><code>async function fetchUserData(userId) {
+    try {
+        const response = await fetch(`https://api.ejemplo.com/users/${userId}`, {
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Fallo al obtener usuario:', error);
+        throw error;
+    }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="completion-box">
+                    <span>¿Has revisado y comprendido los conceptos de este capítulo?</span>
+                    <button class="completion-btn" data-section="fundamentos">Marcar como Completado</button>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: FRAMEWORKS ================= -->
+            <section id="frameworks" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Capítulo 02</span>
+                    <h1 class="section-title">Frameworks SPAs, Reactividad & SSR</h1>
+                    <p class="section-description">
+                        Comparativa de React, Vue y Svelte, junto con patrones SSR (Server-Side Rendering) en Next.js.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>1. Tabla Comparativa de Frameworks</h2>
+                    <table style="width:100%; border-collapse: collapse; margin: 1rem 0; font-size:0.9rem;">
+                        <thead>
+                            <tr style="background-color: var(--bg-tertiary); text-align: left;">
+                                <th style="padding:0.75rem; border:1px solid var(--border-color);">Característica</th>
+                                <th style="padding:0.75rem; border:1px solid var(--border-color);">React</th>
+                                <th style="padding:0.75rem; border:1px solid var(--border-color);">Vue 3</th>
+                                <th style="padding:0.75rem; border:1px solid var(--border-color);">Svelte</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:600;">Paradigma</td>
+                                <td style="padding:0.75rem; border:1px solid var(--border-color);">JSX + Functional Components</td>
+                                <td style="padding:0.75rem; border:1px solid var(--border-color);">Single File Components (.vue)</td>
+                                <td style="padding:0.75rem; border:1px solid var(--border-color);">Compilador No-Virtual DOM</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:600;">Manejo de Estado</td>
+                                <td style="padding:0.75rem; border:1px solid var(--border-color);">useState / Zustand</td>
+                                <td style="padding:0.75rem; border:1px solid var(--border-color);">ref() / Pinia</td>
+                                <td style="padding:0.75rem; border:1px solid var(--border-color);">$state / Stores</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0.75rem; border:1px solid var(--border-color); font-weight:600;">Rendimiento Bundle</td>
+                                <td style="padding:0.75rem; border:1px solid var(--border-color);">Medio (~40KB gzip)</td>
+                                <td style="padding:0.75rem; border:1px solid var(--border-color);">Liviano (~16KB gzip)</td>
+                                <td style="padding:0.75rem; border:1px solid var(--border-color);">Ultra Mínimo (~2KB)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-block">
+                    <h2>2. React Server Components & Next.js App Router</h2>
+                    <p>Ejemplo de un Server Component en Next.js fetching datos en el servidor sin clientes bundle JS extra.</p>
+
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span class="code-lang">TSX (Next.js)</span>
+                            <button class="copy-btn">📋 Copiar</button>
+                        </div>
+                        <pre><code>// app/users/page.tsx (Server Component por defecto)
+import { Suspense } from 'react';
+
+async function UserList() {
+    const res = await fetch('https://api.ejemplo.com/users', { cache: 'no-store' });
+    const users = await res.json();
+
+    return (
+        &lt;ul className="space-y-2"&gt;
+            {users.map((u: any) => (
+                &lt;li key={u.id} className="p-3 bg-slate-800 rounded"&gt;{u.name}&lt;/li&gt;
+            ))}
+        &lt;/ul&gt;
+    );
+}
+
+export default function UsersPage() {
+    return (
+        &lt;section&gt;
+            &lt;h1 className="text-2xl font-bold"&gt;Usuarios&lt;/h1&gt;
+            &lt;Suspense fallback={&lt;p&gt;Cargando datos del servidor...&lt;/p&gt;}&gt;
+                &lt;UserList /&gt;
+            &lt;/Suspense&gt;
+        &lt;/section&gt;
+    );
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="completion-box">
+                    <span>¿Has revisado los patrones de Frameworks y SSR?</span>
+                    <button class="completion-btn" data-section="frameworks">Marcar como Completado</button>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: ESTILOS ================= -->
+            <section id="estilos" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Capítulo 03</span>
+                    <h1 class="section-title">Estilos Modernos & Tailwind CSS</h1>
+                    <p class="section-description">
+                        Estrategias de arquitectura CSS: Utility-First con Tailwind, CSS Modules y CSS Variables nativas.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>1. Tailwind CSS Utility-First Architecture</h2>
+                    <p>Diseño rápido y consistente directamente en el marcado sin colisiones de nombres de clase global.</p>
+
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span class="code-lang">HTML + Tailwind</span>
+                            <button class="copy-btn">📋 Copiar</button>
+                        </div>
+                        <pre><code>&lt;!-- Card UI con Tailwind CSS --&gt;
+&lt;div class="max-w-sm mx-auto bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-lg hover:border-indigo-500 transition-all duration-300"&gt;
+    &lt;div class="flex items-center space-x-4"&gt;
+        &lt;div class="w-12 h-12 bg-indigo-600/20 text-indigo-400 rounded-lg flex items-center justify-center font-bold"&gt;
+            ⚡
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;h3 class="text-lg font-semibold text-white"&gt;Componente Pro&lt;/h3&gt;
+            &lt;p class="text-sm text-slate-400"&gt;Optimizado para Tailwind&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="completion-box">
+                    <span>¿Comprendes la arquitectura de estilos moderna?</span>
+                    <button class="completion-btn" data-section="estilos">Marcar como Completado</button>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: HERRAMIENTAS ================= -->
+            <section id="herramientas" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Capítulo 04</span>
+                    <h1 class="section-title">Build Tools, Bundlers & Tooling</h1>
+                    <p class="section-description">
+                        Velocidad de desarrollo con Vite, verificación estática de tipos con TypeScript y herramientas de linting.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>1. Configuración de un Proyecto con Vite + TypeScript</h2>
+                    <p>Vite aprovecha los módulos ES nativos del navegador para ofrecer Hot Module Replacement (HMR) instantáneo.</p>
+
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span class="code-lang">Bash / Terminal</span>
+                            <button class="copy-btn">📋 Copiar</button>
+                        </div>
+                        <pre><code># Crear proyecto moderno con Vite
+npm create vite@latest mi-app-frontend -- --template react-ts
+
+cd mi-app-frontend
+npm install
+
+# Iniciar servidor de desarrollo en milisegundos
+npm run dev</code></pre>
+                    </div>
+                </div>
+
+                <div class="completion-box">
+                    <span>¿Has configurado herramientas de construcción previamente?</span>
+                    <button class="completion-btn" data-section="herramientas">Marcar como Completado</button>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: RENDIMIENTO ================= -->
+            <section id="rendimiento" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Capítulo 05</span>
+                    <h1 class="section-title">Rendimiento Web & Core Web Vitals</h1>
+                    <p class="section-description">
+                        Métricas fundamentales de Google (LCP, INP, CLS) y técnicas prácticas para lograr puntajes de 100 en Lighthouse.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>1. Metricas Core Web Vitals (2026)</h2>
+                    <ul style="line-height: 1.8;">
+                        <td><strong>LCP (Largest Contentful Paint):</strong> Mide la velocidad de carga percibida. Meta: <code>&lt; 2.5s</code>.</td>
+                        <td><strong>INP (Interaction to Next Paint):</strong> Reemplaza a FID. Mide la responsividad general ante interacciones del usuario. Meta: <code>&lt; 200ms</code>.</td>
+                        <td><strong>CLS (Cumulative Layout Shift):</strong> Mide la estabilidad visual evitando cambios repentinos. Meta: <code>&lt; 0.1</code>.</td>
+                    </ul>
+                </div>
+
+                <div class="content-block">
+                    <h2>2. Carga Diferida (Lazy Loading) de Imágenes y Componentes</h2>
+
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span class="code-lang">JavaScript / HTML</span>
+                            <button class="copy-btn">📋 Copiar</button>
+                        </div>
+                        <pre><code>&lt;!-- Imagen con Lazy Loading Nativo e hint de prioridad --&gt;
+&lt;img src="hero-banner.webp" fetchpriority="high" alt="Banner principal" /&gt;
+&lt;img src="footer-image.jpg" loading="lazy" decoding="async" alt="Imagen secundaria" /&gt;
+
+&lt;!-- Code Splitting en React --&gt;
+import { lazy, Suspense } from 'react';
+const ChartHeavy = lazy(() => import('./ChartHeavy'));
+
+function Dashboard() {
+    return (
+        &lt;Suspense fallback={&lt;div&gt;Cargando gráfico...&lt;/div&gt;}&gt;
+            &lt;ChartHeavy /&gt;
+        &lt;/Suspense&gt;
+    );
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="completion-box">
+                    <span>¿Aplicarás optimización de Web Vitals en tu proyecto?</span>
+                    <button class="completion-btn" data-section="rendimiento">Marcar como Completado</button>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: TESTING ================= -->
+            <section id="testing" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Capítulo 06</span>
+                    <h1 class="section-title">Testing, Vitest & E2E con Playwright</h1>
+                    <p class="section-description">
+                        Estrategia de pirámide de pruebas: Pruebas unitarias ultrarrápidas con Vitest y pruebas E2E con Playwright.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>1. Test Unitario con Vitest & Testing Library</h2>
+
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span class="code-lang">TypeScript / Vitest</span>
+                            <button class="copy-btn">📋 Copiar</button>
+                        </div>
+                        <pre><code>import { describe, it, expect } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import { Button } from './Button';
+
+describe('Componente Button', () => {
+    it('debe renderizar el texto correctamente y responder a clics', async () => {
+        render(&lt;Button label="Guardar" onClick={() => {}} /&gt;);
+        
+        const btn = screen.getByRole('button', { name: /guardar/i });
+        expect(btn).toBeInTheDocument();
+    });
+});</code></pre>
+                    </div>
+                </div>
+
+                <div class="completion-box">
+                    <span>¿Has revisado la sección de Testing?</span>
+                    <button class="completion-btn" data-section="testing">Marcar como Completado</button>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: WIZARD ================= -->
+            <section id="asistente" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Herramienta Interactiva</span>
+                    <h1 class="section-title">Asistente de Selección de Stack Frontend</h1>
+                    <p class="section-description">
+                        Responde 4 preguntas sencillas y obtén una recomendación personalizada de arquitectura y stack tecnológico para tu aplicación.
+                    </p>
+                </div>
+
+                <div class="wizard-container">
+                    <!-- Step Indicator -->
+                    <div class="wizard-step-indicator">
+                        <div class="step-dot active">1</div>
+                        <div class="step-dot">2</div>
+                        <div class="step-dot">3</div>
+                        <div class="step-dot">4</div>
+                    </div>
+
+                    <!-- Step 1 -->
+                    <div class="wizard-step active" data-step="1" data-wizard-key="projectType">
+                        <div class="wizard-question">1. ¿Qué tipo de aplicación estás construyendo?</div>
+                        <div class="options-grid">
+                            <div class="option-card" data-value="spa">
+                                <div class="option-title">🖥️ Single Page App (SPA)</div>
+                                <div class="option-desc">Dashboard interactivo, panel tras login, SaaS interno.</div>
+                            </div>
+                            <div class="option-card" data-value="ssr">
+                                <div class="option-title">🌐 App Pública / SEO (SSR)</div>
+                                <div class="option-desc">E-commerce, sitio de contenido con alto rendimiento y SEO clave.</div>
+                            </div>
+                            <div class="option-card" data-value="static">
+                                <div class="option-title">📰 Sitio Estático / Blog</div>
+                                <div class="option-desc">Documentación, landing page, portfolio personal.</div>
+                            </div>
+                        </div>
+                        <div class="wizard-actions">
+                            <button class="btn btn-secondary" disabled>Anterior</button>
+                            <button class="btn btn-primary btn-next" disabled>Siguiente →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="wizard-step" data-step="2" data-wizard-key="devPriority">
+                        <div class="wizard-question">2. ¿Cuál es tu prioridad principal?</div>
+                        <div class="options-grid">
+                            <div class="option-card" data-value="speed">
+                                <div class="option-title">⚡ Velocidad de Desarrollo</div>
+                                <div class="option-desc">Llegar rápido al mercado con componentes prediseñados.</div>
+                            </div>
+                            <div class="option-card" data-value="performance">
+                                <div class="option-title">🚀 Rendimiento Absoluto</div>
+                                <div class="option-desc">Mínimo tamaño de paquete bundle y tiempos de carga instantáneos.</div>
+                            </div>
+                            <div class="option-card" data-value="ecosystem">
+                                <div class="option-title">🌐 Ecosistema & Empleabilidad</div>
+                                <div class="option-desc">Mayor cantidad de librerías, comunidad y vacantes laborales.</div>
+                            </div>
+                        </div>
+                        <div class="wizard-actions">
+                            <button class="btn btn-secondary btn-prev">Anterior</button>
+                            <button class="btn btn-primary btn-next" disabled>Siguiente →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="wizard-step" data-step="3" data-wizard-key="styling">
+                        <div class="wizard-question">3. ¿Cómo prefieres manejar los estilos CSS?</div>
+                        <div class="options-grid">
+                            <div class="option-card" data-value="tailwind">
+                                <div class="option-title">🎨 Tailwind CSS</div>
+                                <div class="option-desc">Clases de utilidad directo en el marcado HTML/JSX.</div>
+                            </div>
+                            <div class="option-card" data-value="css-modules">
+                                <div class="option-title">📦 CSS Modules / Vanilla</div>
+                                <div class="option-desc">Archivos CSS aislados con clases de alcance local.</div>
+                            </div>
+                            <div class="option-card" data-value="component-lib">
+                                <div class="option-title">🧱 Component Library</div>
+                                <div class="option-desc">UI prediseñada (Shadcn UI, Material UI, Mantine).</div>
+                            </div>
+                        </div>
+                        <div class="wizard-actions">
+                            <button class="btn btn-secondary btn-prev">Anterior</button>
+                            <button class="btn btn-primary btn-next" disabled>Siguiente →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="wizard-step" data-step="4" data-wizard-key="stateMgmt">
+                        <div class="wizard-question">4. ¿Qué tan complejo es el estado global de tu aplicación?</div>
+                        <div class="options-grid">
+                            <div class="option-card" data-value="simple">
+                                <div class="option-title">🌱 Liviano / Moderado</div>
+                                <div class="option-desc">Solo autenticación básica, temas y estado local de UI.</div>
+                            </div>
+                            <div class="option-card" data-value="complex">
+                                <div class="option-title">🌳 Complejo / Multi-usuario</div>
+                                <div class="option-desc">Múltiples fuentes de datos, almacenamiento en caché, flujos complejos.</div>
+                            </div>
+                        </div>
+                        <div class="wizard-actions">
+                            <button class="btn btn-secondary btn-prev">Anterior</button>
+                            <button class="btn btn-primary btn-next" disabled>Calcular Stack Recomendado 🎯</button>
+                        </div>
+                    </div>
+
+                    <!-- Result Display -->
+                    <div id="wizard-result" style="display:none;">
+                        <div class="wizard-result-card">
+                            <div class="rec-title">🎯 Tu Stack Frontend Recomendado</div>
+                            <div id="rec-stack-name" style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.8rem;"></div>
+                            
+                            <div class="rec-tags">
+                                <span class="rec-tag" id="rec-framework"></span>
+                                <span class="rec-tag" id="rec-styling"></span>
+                                <span class="rec-tag" id="rec-state"></span>
+                            </div>
+
+                            <div class="rec-body" id="rec-rationale"></div>
+
+                            <button id="reset-wizard-btn" class="btn btn-secondary" style="margin-top: 1rem;">🔄 Reiniciar Asistente</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</div>
+
+<!-- Main JS -->
+<script src="js/app.js"></script>
+</body>
+</html>
